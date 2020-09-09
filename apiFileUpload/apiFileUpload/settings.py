@@ -24,7 +24,8 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = [
     '104.131.29.28',
-    'localhost'
+    'localhost',
+    'jeisontech.dev'
 ]
 
 
