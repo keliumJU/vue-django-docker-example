@@ -1,0 +1,23 @@
+version: "3.8"
+
+services :
+  backend:
+    image: "backend-image"
+    build: "./apiFileUpload"
+    restart: "always"
+    env_file: "./apiFileUpload/apiFileUpload/.env"
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ".:/apiUpload"
+
+  frontend:
+    image: "frontend-image"
+    build: "./frontend"
+    restart: "always"
+    env_file: "./frontend/env.example"
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/src/app/node_modules"
